@@ -85,7 +85,7 @@ const WalletPage: React.FC<Props> = (props: Props) => {
 ### 1. **Undefined Interface value (`blockchain`)**
 
 - **Issue:** The interface missing `blockchain`.
-- **Fix:** Add `blockchain` to interface.
+- **Fix:** Add `blockchain` to interface. Or maybe the blockchain here is currency then replace `balance.blockchain` with `balance.currency`
 
 ### 2. **Undefined Variable (`lhsPriority` Should Be `balancePriority`)**
 
@@ -132,7 +132,7 @@ const WalletPage: React.FC<Props> = (props: Props) => {
 ### 10. **Inefficient and Potentially Duplicate React List Keys**
 
 - **Issue:** Using `index` alone as the `key` can cause issues when the list updates dynamically.
-- **Fix:** Use ``${balance.currency}-${balance.blockchain}-${index}` instead for a more stable key.
+- **Fix:** Use ``${balance.currency}-${index}` instead for a more stable key.
 
 ### 11. **Potential Crash When Accessing prices[balance.currency]**
 
@@ -155,7 +155,6 @@ const WalletPage: React.FC<Props> = (props: Props) => {
 interface WalletBalance {
   currency: string;
   amount: number;
-  blockchain: string;
 }
 
 interface Props extends BoxProps {}
@@ -179,11 +178,11 @@ const WalletPage: React.FC<Props> = (props) => {
     return balances
       .filter(
         (balance: WalletBalance) =>
-          getPriority(balance.blockchain) > -99 && balance.amount > 0
+          getPriority(balance.currency) > -99 && balance.amount > 0
       )
       .sort((lhs, rhs) => {
-        const leftPriority = getPriority(lhs.blockchain);
-        const rightPriority = getPriority(rhs.blockchain);
+        const leftPriority = getPriority(lhs.currency);
+        const rightPriority = getPriority(rhs.currency);
         return rightPriority - leftPriority
       });
   }, [balances]);
@@ -192,7 +191,7 @@ const WalletPage: React.FC<Props> = (props) => {
     const usdValue = (prices[balance.currency] ?? 0) * balance.amount;
     return (
       <WalletRow
-        key={`${balance.currency}-${balance.blockchain}-${index}`}
+        key={`${balance.currency}-${index}`}
         amount={balance.amount}
         usdValue={usdValue}
         formattedAmount={balance.amount.toFixed()}
