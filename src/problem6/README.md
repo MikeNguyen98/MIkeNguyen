@@ -1,15 +1,14 @@
 # Scoreboard API Module
 ## Overview
 
-This module handles real-time score updates for a website leaderboard. Users earn points by completing specific actions, and their scores are updated accordingly. The scoreboard displays the top 10 users with the highest scores and updates live to reflect changes.
+This module manages a website leaderboard's real-time score updates. By carrying out particular tasks, users accumulate points, and their scores are updated correspondingly. The scoreboard, which is updated in real time to reflect changes, shows the top ten users with the highest scores.
 
 ## Features
 
 1.  **Score Update API** - Allows users to update their score upon completing an action.
 2.  **Leaderboard API** - Fetches the top 10 users with the highest scores.
-3.  **Real-time Updates** - Uses WebSockets to push score updates to clients.
+3.  **Real-time Updates** - Uses WebSockets to push data updates to clients.
 4.  **Security & Authorization** - Prevents unauthorized users from manipulating scores.
-5.  **Database Storage** - Persists scores efficiently for quick retrieval.
 
 ## API Endpoints
 
@@ -64,15 +63,11 @@ To ensure live updates of the scoreboard, a WebSocket connection will be used:
   
 **User Scores Table**
 
-| Field | Type | Description |
-
-|-----------|--------|-------------------------------------|
-
-| userId | String | Unique identifier for the user. |
-
-| score | Int | Total score of the user. |
-
-| updatedAt | Date | Timestamp of the last update. |
+| Field     | Type   | Description                     |
+| --------- | ------ | ------------------------------- |
+| userId    | String | Unique identifier for the user. |
+| score     | Int    | Total score of the user.        |
+| updatedAt | Date   | Timestamp of the last update.   |
 
 
 ## Execution Flow Diagram
