@@ -1,10 +1,30 @@
-# 99Tech Code Challenge #1 #
+# 99Tech Code Challenge #1
 
-Note that if you fork this repository, your responses may be publicly linked to this repo.  
-Please submit your application along with the solutions attached or linked.   
+Welcome to my submission for the 99Tech Code Challenge. Below is a guide to help navigate the answers to each problem.
 
-It is important that you minimally attempt the problems, even if you do not arrive at a working solution.
+## 📂 Project Structure
 
-## Submission ##
-You can either provide a link to an online repository, attach the solution in your application, or whichever method you prefer.
-We're cool as long as we can view your solution without any pain.
+The answers to the challenge problems are located inside the `src` directory. Each problem has its own file, and some solutions are implemented in TypeScript (`.ts` files), while others are documented in `README.md` files.
+
+### 🔍 How to Find the Answers
+
+- **TypeScript Solutions**: Found in each problem files inside the `src` folder.
+- **Written Explanations**: Available in `README.md` files within the `src` directory.
+
+## 🚀 Getting Started
+
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/MikeNguyen98/MIkeNguyen.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd MIkeNguyen
+   ```
+3. Open the `src` folder to explore the solutions.
+
+If you have any questions, feel free to reach out!
+
+Best,  
+**Mike Nguyen**
+
